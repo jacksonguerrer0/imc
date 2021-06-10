@@ -9,7 +9,18 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
   },
   plugins: [
-    new HTMLWebpackPlugin({template: './src/index.html'})
+    new HTMLWebpackPlugin({
+        template: './src/index.html',
+        minify:  {
+            collapseWhitespace: true,
+            removeComments: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            useShortDoctype: true
+          }
+          
+    })
   ]
 
 };
